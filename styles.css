@@ -1,0 +1,33 @@
+/* 📱 Default = Mobile (small screens) */
+body {
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* 📱 Tablets (768px and up) */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 20px;
+  }
+}
+
+/* 💻 Desktops (1024px and up) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    padding: 40px;
+    max-width: 1200px;  /* prevent huge stretching */
+    margin: 0 auto;     /* center content */
+  }
+
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+  }
+}
