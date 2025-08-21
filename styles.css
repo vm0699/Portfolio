@@ -22,16 +22,13 @@ body{
     radial-gradient(1000px 700px at -10% 10%, rgba(34,211,238,.14), transparent 60%),
     var(--bg);
 }
-/* replace the old .container rule */
-.container{
-  /* Wider on desktops, still fluid on smaller screens */
-  width: clamp(1040px, 92vw, 1440px);
-  margin: 0 auto;
-}
 
-/* OPTIONAL: on very wide screens, let 3-up grids become 4-up */
-@media (min-width: 1400px){
-  .grid-3{ grid-template-columns: repeat(4, 1fr); }
+/* Container – fluid on small, fixed max on large */
+.container{
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
 
 /* ================= Components ================= */
@@ -173,7 +170,6 @@ input,textarea{
   background:color-mix(in oklab,var(--surface),#0e162b 8%);color:var(--text)
 }
 
-
 /* ========== Work Gallery ========== */
 .gallery-grid{
   display:grid;
@@ -222,7 +218,6 @@ input,textarea{
   max-width:min(92vw, 1000px);
 }
 
-
 /* Footer */
 footer{padding:2rem 0;color:var(--muted)}
 
@@ -235,17 +230,21 @@ footer{padding:2rem 0;color:var(--muted)}
 /* Back to top */
 #back-to-top{position:fixed;right:1rem;bottom:1rem;display:none}
 
-/* Responsive */
+/* ================= Responsive ================= */
 @media (max-width: 960px){
   .grid-3{grid-template-columns:1fr 1fr}
   .stack{grid-template-columns:repeat(4,1fr)}
   .statgrid{grid-template-columns:repeat(2,1fr)}
 }
+
 @media (max-width: 680px){
+  body{font-size: 15px;}
   .navlinks{display:none}
   .hamb{display:inline-flex}
   .grid-3,.grid-2, form{grid-template-columns:1fr}
   .stack{grid-template-columns:repeat(2,1fr)}
+  h1{font-size: 1.8rem;}
+  section h2{font-size: 1.3rem;}
 }
 
 /* Motion preferences */
