@@ -231,13 +231,20 @@ footer{padding:2rem 0;color:var(--muted)}
 #back-to-top{position:fixed;right:1rem;bottom:1rem;display:none}
 
 /* ================= Responsive ================= */
+
+/* Tablet (≤960px) */
 @media (max-width: 960px){
   .grid-3{grid-template-columns:1fr 1fr}
   .stack{grid-template-columns:repeat(4,1fr)}
   .statgrid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* Phone (≤680px) */
 @media (max-width: 680px){
+  .container {
+    max-width: 100%;
+    padding: 0 0.75rem;
+  }
   body{font-size: 15px;}
   .navlinks{display:none}
   .hamb{display:inline-flex}
@@ -245,6 +252,13 @@ footer{padding:2rem 0;color:var(--muted)}
   .stack{grid-template-columns:repeat(2,1fr)}
   h1{font-size: 1.8rem;}
   section h2{font-size: 1.3rem;}
+}
+
+/* Very small phones (≤400px) */
+@media (max-width: 400px){
+  body{font-size: 14px;}
+  h1{font-size: 1.5rem;}
+  section h2{font-size: 1.1rem;}
 }
 
 /* Motion preferences */
